@@ -1,0 +1,245 @@
+db.createCollection("Reservas",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            required:["fechaCita", "horaCita", "idTatuador", "idCliente"],
+            properties:{
+                _id:{
+                    bsonType: "objectId",
+                    description: "id generado automaticamente"
+                },
+                fechaCita: {
+                    bsonType: "date",
+                    description: "Fecha en la que se realizará el tatuaje"
+                },
+                horaCita: {
+                    bsonType: "date",
+                    description: "Hora de la cita"
+                },
+                idTatuador: {
+                    bsonType: "objectId",
+                    description: "El id del tatuador que se encargará de realizar el tatuaje"
+                },
+                idCliente: {
+                    bsonType: "objectId",
+                    description: "El id del cliente que se realizará el tatuaje"
+                }
+            }
+        }
+    },
+    validationAction: "error",
+    ValidationLevel: "strict"
+});
+
+db.createCollection("Clientes",{
+    validator: {
+        $jsonSchema:{
+            bsonType: "object",
+            required: ["nombre", "apellido", "correo", "documento", "celular", "edad", "contrasena"],
+            properties: {
+                _id:{
+                    bsonType: "objectId",
+                    description: "Id generado automaticamente"
+                },
+                nombre:{
+                    bsonType: "string",
+                    description: "El nombre del cliente"
+                },
+                apellido: {
+                    bsonType: "string",
+                    description: "El apellido del cliente"
+                },
+                correo:{
+                    bsonType: "string",
+                    description: "Correo del cliente"
+                },
+                documento: {
+                    bsonType: "string",
+                    description: "Documento de identidad del cliente"
+                },
+                celular: {
+                    bsonType: "string",
+                    description: "Celular o telefono de contacto del cliente"
+                },
+                fecha_nacimiento: {
+                    bsonType: "date",
+                    description: "Fecha de nacimiento para identificar la edad del cliente"
+                },
+                contrasena: {
+                    bsonType: "string",
+                    description: "Contraseña para iniciar sesión"
+                },
+                alergias: {
+                    bsonType: "string",
+                    description: "Posibles alergias del cliente"
+                },
+                idPiercing: {
+                    bsonType: "objectId",
+                    description: "Identificador del piercing en caso de ser la elección del cliente"
+                },
+                idTatuaje: {
+                    bsonType: "objectId",
+                    description: "Identificador del tatuaje en caso de ser la elección del cliente"
+                }
+            }
+        }
+    },
+    validationAction: "error",
+    validationLevel: "strict"
+});
+
+db.createCollection("Tatuadores",{
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["nombre", "apellido", "correo", "documento", "celular", "contrasena"],
+            properties: {
+                _id: {
+                    bsonType: "objectId",
+                    description: "Id generado automaticamente"
+                },
+                nombre:{
+                    bsonType: "string",
+                    description: "El nombre del tatuador"
+                },
+                apellido: {
+                    bsonType: "string",
+                    description: "El apellido del tatuador"
+                },
+                correo:{
+                    bsonType: "string",
+                    description: "Correo del tatuador"
+                },
+                documento: {
+                    bsonType: "string",
+                    description: "Documento de identidad del tatuador"
+                },
+                celular: {
+                    bsonType: "string",
+                    description: "Celular o telefono de contacto del tatuador"
+                },
+                contrasena: {
+                    bsonType: "string",
+                    description: "Contraseña para iniciar sesión"
+                },
+                idPiercing: {
+                    bsonType: "objectId",
+                    description: "Identificador del piercing que realizará el tatuador"
+                },
+                idTatuaje: {
+                    bsonType: "objectId",
+                    description: "Identificador del tatuaje que realizará el tatuador"
+                }
+            }
+        }
+    },
+    validationAction: "error",
+    validationLevel: "strict"
+});
+
+db.createCollection("Piercings",{
+    validator:{
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["nombre", "descripcion", "zona", "imagen"],
+            properties: {
+                _id: {
+                    bsonType: "objectId",
+                    description: "Id generado automaticamente"
+                },
+                nombre: {
+                    bsonType: "string",
+                    description: "Nombre del piercing"
+                },
+                descripcion: {
+                    bsonType: "string",
+                    description: "Descripcion de datos del piercing como: material de la joya y tipo"
+                },
+                zona: {
+                    bsonType: "string",
+                    description: "Zona del cuerpo donde se ubica la perforacion"
+                },
+                imagen: {
+                    bsonType: "string",
+                    descrption: "Imagen demostrativa del piercing"
+                }
+            }
+        }
+    },
+    validationAction: "error",
+    validationLevel: "strict"
+});
+
+db.createCollection("Tatuajes", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["nombre", "descripcion", "tamano", "color", "imagen"],
+            properties: {
+                _id: {
+                    bsonType: "objectId",
+                    description: "Id generado automaticamente"
+                },
+                nombre: {
+                    bsonType: "string",
+                    description: "Nombre que se le haya atribuido al tatuaje"
+                },
+                descripcion: {
+                    bsonType: "string",
+                    description: "Descripcion de datos como: técnica utilizada, color y estilo"
+                },
+                tamano: {
+                    bsonType: "string",
+                    description: "Tamaño deseado o exhibido para el tatuaje"
+                },
+                color: {
+                    bsonType: "string",
+                    description: "Color o colores deseados para la elaboracion del tatuaje"
+                },
+                imagen: {
+                    bsonType: "string",
+                    description: "Imagen demostrativa del tatuaje"
+                }
+            }
+        }
+    },
+    validationAction: "error",
+    validationLevel: "strict"
+});
+
+db.createCollection("Disenos", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["nombre", "descripcion", "tatuador", "imagen", "tecnica"],
+            properties: {
+                _id:{
+                bsonType: "objectId",
+                description: "Id generado automaticamente"
+                },
+                nombre: {
+                    bsonType: "string",
+                    description: "Nombre que se le haya atribuido al tatuaje"
+                },
+                descripcion: {
+                    bsonType: "string",
+                    description: "Descripcion de datos como: técnica utilizada, color y estilo"
+                },
+                idTatuador: {
+                    bsonType: "objectId",
+                    description: "Id del tatuador que realizó el tatuaje"
+                },
+                imagen: {
+                    bsonType: "string",
+                    description: "Imagen demostrativa del tatuaje"
+                },
+                tecnica: {
+                    bsonType: "string",
+                    description: "tecnica utilizada a la hora de elaborar el tatuaje"
+                }
+            }
+        }
+    },
+    validationAction: "error",
+    validationLevel: "strict"
+});

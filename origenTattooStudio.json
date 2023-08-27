@@ -1,0 +1,96 @@
+[
+    {
+    "Reservas":
+        {
+            "_id": "",
+            "fechaCita": "2022-10-21T013:15:00Z",
+            "idTatuador": {
+                "objectId": "64e93c32b772a6b18374624e"
+            },
+            "idCliente": {
+                "objectId": "64e964a051f5ffa51217d6fa"
+            },
+            "idPiercing": [
+                "_id", "_id", "_id" 
+            ],
+            "idTatuaje": [
+                "_id", "_id", "_id" 
+            ],
+            "estado": [
+                "Pendiente", "activa", "canelada" 
+            ]
+        }
+
+    },
+    {
+    "Clientes": 
+        {
+            "_id": "",
+            "nombre": "Alejandra",
+            "apellido": "Fernandez",
+            "correo": "alejafdez@gmail.com",
+            "documento": "3456787654",
+            "celular": "3053792464",
+            "fecha_nacimiento": "23-08-2000",
+            "alergias": "tinta azul",
+            "contrasena": "alejitafernandez123",
+            "idPiercing":{
+                "objectId":"64e93c32b772a6b18374624e"
+                },
+            "idTatuaje": {
+                "objectId":"64e93c32b772a6b18374624e"
+            }
+
+
+        }
+
+    },
+    {
+    "Tatuadores":
+        {
+            "_id": "",
+            "nombre": "Adrian",
+            "apellido": "Sangronis",
+            "correo": "asangronis@gmail.com",
+            "documento": "71290649",
+            "celular": "3226129772",
+            "contrasena": "as321654"
+
+        }
+
+    },
+    {
+    "Usuario": 
+        {
+        "_id": "",
+        "correo": "asangronis@gmail.com",
+        "contrasena": "as321654",
+        "rol": "tatuador"
+        }
+    },
+    {
+    "Piercings":
+        {
+            "_id": "",
+            "nombre": "Septum",
+            "descripcion": "es un piercing circular que atraviesa el centro de la nariz. Este piercing se hace a través de la fina porción de carne en la parte delantera de la nariz. Material de la joya en acero quirurgico para una mejor cicatrizacion",
+            "zona": "septo de la nariz",
+            "imagen": "https://elle.clarin.com/2021/08/17/Kn3vbB_g2_1600x805__1.jpg"
+        }
+
+    },
+    {
+    "Tatuajes":
+        {
+            "_id": "",
+            "nombre": "Mandala de flores",
+            "descripcion": "Mandala utilizando formas de flores, tecnica lineas finas con relleno",
+            "tamano": "De todo el brazo",
+            "color": "negro, rojo, amarillo",
+            "tecnica": "realismo",
+            "autor": "el que sea",
+            "imagen": "https://mandalasweb.net/wp-content/uploads/2019/05/Mandalas-de-flores-pintadas.jpg"
+        }
+
+    }
+]
